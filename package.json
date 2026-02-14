@@ -1,0 +1,25 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node dist/index.js",
+    "dev": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohdAyaanSiddiqui/TS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MohdAyaanSiddiqui/TS/issues"
+  },
+  "homepage": "https://github.com/MohdAyaanSiddiqui/TS#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
