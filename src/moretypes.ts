@@ -50,3 +50,8 @@ function RediredtToBasedOnRole(role:Role){
     }
     role;
 }
+
+//Never Ending
+function NeverFunction():never{
+    while(true){}
+}
