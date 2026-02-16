@@ -1,72 +1,73 @@
+//1 Basic Tyep Definition And Function Usage
 type ChaiOrder = {
-    type: string,
-    sugar: number,
-    strong: boolean
+    name:string,
+    sugar:number,
+    strong:boolean
 }
 function MakeChai(order: ChaiOrder){
     console.log(order);
 }
-
 function ServeChai(order: ChaiOrder){
     console.log(order);
 }
 
-interface TeaRecipe  {
-    water:number;
+//2 Interface Definition And Class Implementation
+interface TeaRecipe{
+    water:number,
     milk:number
 }
-//class MasalaChai implements TeaRecipe{
-  //  water = 100;
-    //milk = 50;
-//}
+class MasalaChai implements TeaRecipe{
+    water= 50;
+    milk= 25;
+}
+//3 Interface with union types and class implementation
 
-interface CupSize {
-    size: "Small" | "Large" 
+interface CupSize{
+    size: "Small" | "Large"
 }
 class Chai implements CupSize{
     size: "Small" | "Large"="Large";
 }
-
+//4 Union Type For responses
 type response = {
-    ok:true 
+    ok:true
 } |
 {
-    ok: false
+    ok:false
 }
-//class MyRes implements Response {
-  //  ok: boolean = true;
-//}
 
-type TeaType = "masala" | "ginger" | "Lemon"//Literals Type
-function OrderChai(t: TeaType){
+class MyRes implements response{
+    ok:boolean = true;
+}
+//5 Literal Type and function
+type TeaType = "Masala" | "Ginger" | "Lemon"
+function OrderChai(t:TeaType){
     console.log(t);
 }
-
+//6 Intersection Types
 type BaseChai = {TeaLeaves: number}
-type Extra = {masala: number}
-type MasalaChai = BaseChai & Extra;
-const Cup: MasalaChai = {
+type Extra = {Masala: number}
+type MasalaaChai = BaseChai & Extra;
+const Cup: MasalaaChai = {
     TeaLeaves:2,
-    masala:1,
+    Masala:2
 }
 
-type User = {
-    username: string
-    bio?: string 
+//7 Optional Properties
+type User  = {
+    username : string
+    bio?: string
 }
+const U1: User = {username:"Ayaan"}
+const U2: User = {username:"Ayaan", bio:"Ayaan.ii"}
 
-const U1: User = {username: "Ayaan"}
-
-const U2: User = {username: "Ayaan", bio: "Ayaan.1o"}
-
-type config = {
-    readonly appName: string,
-    version : number
+//8 ReadOnly Properties
+type Config = {
+    readonly appName:string,
+    version: number
 }
-
-const cfg: config = {
+const cfg: Config = {
     appName: "Master",
-    version:1
+    version: 1
 }
-
-//cfg.appName = "Master2"//it gives error we cannot change value after assigning
+cfg.appName = "Master2"
