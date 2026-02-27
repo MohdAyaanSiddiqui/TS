@@ -46,6 +46,10 @@ interface DiscountCalculator{
 
 const Apply50: DiscountCalculator = (P) => P*0.5
 
+interface DC{
+    (Price: number):number
+}
+const App: DC = (P) => P*0.5
 interface TeaMachine{
     Start(): void;
     Stop(): void
@@ -60,6 +64,19 @@ const Machine: TeaMachine = {
     }
 }
 
+interface ST{
+    Start(): void;
+    End():void;
+}
+const ST2: ST ={
+    Start(){
+        console.log("Starting");
+    },
+    End(){
+        console.log("Ending");
+        
+    }
+}
 interface TeaRating {
     [Flavour:string]:number
 }
@@ -69,6 +86,21 @@ const Ratings: TeaRating = {
     Ginger: 4.5
 }
 
+interface TeaRatings{
+    [Flavours:string]:number
+}
+const TeaRatings2: TeaRatings = {
+    Gingers: 4,
+    Masala: 5
+}
+
+interface TR{
+    [F:string]:number
+}
+const TR2:TR = {
+    M:4,
+    A:5
+}
 interface User {
     Name: string
 }
@@ -80,6 +112,19 @@ const U: User = {
     Name: "Ayaan",
     Age: 22
 }
+
+interface User{
+    Name: string
+}
+interface User{
+    Age: number
+}
+const Us: User = {
+    Name:"Modh",
+    Age:23
+    
+}
+
 interface A{a: string}
 interface B{b: string}
 
@@ -117,4 +162,45 @@ interface ApiPromise<T>{
 const Res: ApiPromise<{Flavour:string}>={
     status: 200,
     Data: {Flavour:"Ginger"}
+}
+
+
+
+//function Identity<T>(value:T):T{
+  //  return value
+//}
+Identity<string>("Chai");
+Identity<number>(21);
+Identity<boolean>(true);
+
+function IdentityTwo<T>(arr:T[]):T{
+    return arr[0];
+}
+IdentityTwo(["Chai"]);
+IdentityTwo([30]);
+IdentityTwo([true])
+
+interface APIRES<T>{
+    data:T,
+    success:boolean
+}
+interface user{
+    name: string
+}
+const reso: APIRES<user> ={
+    data: {name:"Ayaan"},
+    success: true
+}
+
+interface APIxRes<T>{
+    data:T,
+    success: boolean
+}
+interface Users{
+    name:string
+}
+
+const Reso: APIxRes<Users>={
+    data:{name:"mfmfe"},
+    success:true
 }
