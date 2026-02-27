@@ -42,7 +42,7 @@ const Cities: readonly string[] = ["Delhi","Jaipur"]
 const CityName: readonly string[] = ["Lko"]
 //not modified the string anymore
 //Multi Dimensional Array
-
+const CityNames: readonly string[] = ["Delhi"]
 const Table: number[][] = [
     [1,2,3],
     [4,5,6]
@@ -51,7 +51,10 @@ const Table3: number[][] = [
     [1,2,3],
     [4,5,6]
 ]
-
+const MDA: number[][] = [
+    [1,2,3],
+    [4,5,6]
+]
 let chaiTuple: [string, number];
 chaiTuple = ["Masala",20]
 //chaiTuple = [20,"Masala"]
@@ -59,6 +62,8 @@ chaiTuple = ["Masala",20]
 let ChaiTupe: [string,number];
 ChaiTupe = ["Masala",21];
 
+let ChaiTuplee: [string, number];
+ChaiTuplee = ["Masala",23]
 let UserInfo: [string, number, boolean?]
 UserInfo = [
     "Ayaan",

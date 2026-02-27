@@ -29,6 +29,20 @@ class Chaiii{
          
     }
 }
+class Tea{
+    WhichFlavour : string;
+    PriceOfTheTea : number;
+
+    constructor(F:string, P:number){
+        this.WhichFlavour = F;
+        console.log(this);
+        this.PriceOfTheTea = P;
+        console.log(this);
+    }
+
+}
+const FinalTea = new Tea("Normal Tea",20);
+
 const MasalaChai = new Chaiii("Ginger",20);
 MasalaChai.Flavour ="Masala"
 //Access Modifier
@@ -59,6 +73,15 @@ class Branch extends Shop{
         return this.ShopName;
     }
 }
+class Shopp{
+    protected Shop = "Tea Corner"
+}
+class Shoppp extends Shopp{
+    getShop(){
+        return this.Shop
+    }
+}
+
 class ShopName {
     protected Shop = "TeaCorner"
 }
@@ -67,7 +90,7 @@ class Branchh extends ShopName{
         return this.Shop
     }
 }
-class ShopN{
+class ShopN {
     protected Shopp = "Tea"
 }
 class Branchhhh extends ShopN{
@@ -83,11 +106,19 @@ class Wallet{
     }
 }
 
+class Wallett{
+    #balance = 100;
+    getBalance(){
+        return this.#balance
+}}
+
+const Wi = new Wallett();
+
 const w = new Wallet();
 
 class Cup{
     readonly Capacity: number = 250;
-
+ 
     constructor(capacity:number){
         this.Capacity = capacity
     }
@@ -99,14 +130,21 @@ class Cupp{
         this.Capacity = capacityy
     }
 } 
-
+class Ccoe{
+    readonly Cap: number = 300;
+    constructor(cap: number){
+        this.Cap = cap
+    }
+}
 class Cop{
     readonly Capacity: number = 300
 
     constructor(capacity:number){
         this.Capacity = capacity
     }
+    
 }
+
 class ModernChai{
     private _sugar = 2
     get sugar(){
@@ -115,6 +153,16 @@ class ModernChai{
     set sugar(value:number){
         if(value > 5 ) throw new Error("Too Sweet")
             this._sugar = value;
+    }
+}
+class GetAndSet{
+    private _sugar = 3;
+    get Sugared(){
+        return this._sugar
+    }
+    set Sugared(value:number){
+        if(value>5) throw new Error("TOoo sewwt");
+        this._sugar = value;
     }
 }
 class ModerenChai{
@@ -141,11 +189,26 @@ class EkChai{
 }
 console.log(EkChai.shopName);
 
+class OneTea{
+    static ShopName = "One Tea"
+    constructor(public flavour: string){}
+}
+console.log(OneTea.ShopName);
+
 abstract class Drink{
     abstract make(): void
 }
 class myChai extends Drink{
     make() {
+        console.log("Brewing Chai");
+    }
+}
+
+abstract class DrinkChai{
+    abstract Makee: void;
+}
+class BrewingChai extends DrinkChai{
+    Makee(){
         console.log("Brewing Chai");
     }
 }
@@ -170,6 +233,74 @@ class ChaiMaker{
     constructor(private heater: Heater){}
     
     make(){
-        this.heater = heat()
+        this.heater.heat()
     }
 }
+
+class Heaters{
+    Heat(){
+        console.log("heating");
+        
+    }
+}
+class ChaiMakere{
+    constructor(private heaters: Heaters){}
+
+    Make(){
+        this.heaters.Heat();
+    }
+}
+
+class Heatersss{
+    Heat(){
+        console.log("Heating");
+    }
+}
+class TeaMaker{
+    constructor(private heatersss: Heatersss){}
+    Makk(){
+        this.heatersss.Heat();
+    }
+}
+
+class Heaterssss{
+    Heatss(){
+        console.log("Heateringegblerjbggqeg");
+    }
+}
+class TeaMaksefefefeer{
+    constructor(private H:Heaterssss){}
+    Makk(){
+        this.H.Heatss();
+    }
+}
+class ElectricHeater {
+  heat() {
+    console.log("Electric heating...");
+  }
+}
+const maker = new ChaiMaker(new ElectricHeater());
+
+class EC{
+    HeatEC(){
+        console.log("EC");
+    }
+}
+const Makers = new (new EC())
+
+interface IHeater{
+    Heated():void
+}
+class GasHeater implements IHeater{
+    Heated(){
+        console.log("New Gas");
+    }
+}
+class CHAiMKER{
+    constructor(private Heater:IHeater){}
+
+    Making(){
+        this.Heater.Heated
+    }
+}
+
