@@ -1,5 +1,7 @@
 import './App.css'
+import { Card } from './components/Card.tsx'
 import { Counter } from './components/Counter.tsx'
+import { OrderForm } from './components/OrderForm.tsx'
 import { TeaCard } from './components/TeaCard.tsx'
 import TeaList from './components/TeaList.tsx'
 
@@ -22,12 +24,27 @@ function App() {
       name="Iphone"
       price={115000}
       />
+      <TeaCard
+      name="Samsung"
+      price={98000}
+      />
       <div>
         <Counter/>
       </div>
       <div>
         <TeaList
         items={menu}
+        />
+      </div>
+      <div>
+        <OrderForm 
+        onSubmit={(order)=>{
+          console.log("Placed", order.name, order.Cups);
+        }}/>
+      </div>
+      <div>
+        <Card title='Tea Aur TypeScript'
+        footer={<button>Order Now</button>}
         />
       </div>
     </div>
