@@ -47,6 +47,12 @@ function App() {
         footer={<button>Order Now</button>}
         />
       </div>
+      <div>
+        <Card
+        title='TypeScript'
+        footer={<button>Order Now</button>}
+        />
+      </div>
     </div>
     </>
   )

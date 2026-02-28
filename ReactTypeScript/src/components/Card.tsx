@@ -14,18 +14,17 @@ export function Card({title, children, footer}:CardProps){
         </section>
     )
 }*/
-
-import type {PropsWithChildren, ReactNode} from "react"
+import type { PropsWithChildren, ReactNode } from "react";
 
 interface CardProps extends PropsWithChildren{
-    title:string,
-    footer?: ReactNode
+    title: string,
+    footer?: boolean
 }
-export function Card({title, children, footer}:CardProps){
+export function Card({title,children,footer}:CardProps){
     return(
         <section>
             <h2>{title}</h2>
-            <div>{children}</div>
+            <p>{children}</p>
             {footer && <footer></footer>}
         </section>
     )

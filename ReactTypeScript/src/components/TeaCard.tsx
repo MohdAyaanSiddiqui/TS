@@ -38,6 +38,7 @@ interface TeaCardProps{
     price: number,
     isSpecial?: boolean
 }
+
 export function TeaCard({name,price,isSpecial = false}:TeaCardProps){
     return(
         <article>
